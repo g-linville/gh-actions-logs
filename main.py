@@ -14,9 +14,9 @@ def setup_auth_headers():
     return headers
 
 def main():
-    job_id = os.environ.get('job_id')
-    owner = os.environ.get('owner')
-    repo = os.environ.get('repo')
+    job_id = os.environ.get('JOB_ID')
+    owner = os.environ.get('OWNER')
+    repo = os.environ.get('REPO')
 
     # Set up authentication headers
     headers = setup_auth_headers()
