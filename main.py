@@ -7,7 +7,8 @@ def setup_auth_headers():
     headers = {
         'Accept': 'application/vnd.github.v3+json',
         'User-Agent': 'Python',
-        'Authorization': f"token {token}"
+        'Authorization': f"token {token}",
+        'X-GitHub-Api-Version': '2022-11-28'
     }
     
     return headers
