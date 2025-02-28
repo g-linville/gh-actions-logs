@@ -1,0 +1,28 @@
+Name: Get GitHub Action Job Logs
+Description: Gets the logs of a GH Actions job.
+Param: api_url: the GitHub API URL for the logs of the job
+Credential: credential as gh-actions-cred
+
+#!/usr/bin/env bash
+
+curl -s -H "Authorization: token $TOKEN" "$API_URL"
+
+---
+Type: credential
+Name: credential
+Tools: github.com/obot-platform/tools/generic-credential
+
+#!sys.call github.com/obot-platform/tools/generic-credential
+
+{
+    "promptInfo": {
+        "fields": [
+            {
+                "name": "GitHub PAT",
+                "description": "Your GitHub personal access token",
+                "env": "TOKEN"
+            }
+        ],
+        "message": "Enter your GitHub personal access token."
+    }
+}
