@@ -6,6 +6,7 @@ Credential: credential as gh-actions-cred
 #!python3
 
 import urllib.request
+import os
 
 url = os.getenv("HTML_URL")
 token = os.getenv("TOKEN")
