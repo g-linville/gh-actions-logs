@@ -1,11 +1,20 @@
 Name: Get GitHub Action Job Logs
 Description: Gets the logs of a GH Actions job.
-Param: api_url: the GitHub API URL for the logs of the job
+Param: html_url: the GitHub HTML URL for the logs of the job
 Credential: credential as gh-actions-cred
 
-#!/usr/bin/env bash
+#!python3
 
-curl -s -H "Authorization: token $TOKEN" "$API_URL"
+import urllib.request
+
+url = os.getenv("HTML_URL")
+token = os.getenv("TOKEN")
+headers = {
+    "Authorization": "token " + token
+}
+
+response = requests.get(url, headers=headers)
+print(response.text)
 
 ---
 Type: credential
